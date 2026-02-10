@@ -150,6 +150,28 @@ export default function Home() {
           </div>
         ))}
       </div>
+            {/* NEW: Floating Action Button (Trending) */}
+      <div style={{ position: "fixed", bottom: "30px", right: "30px", zIndex: 100 }}>
+        <Link to="/allergies">
+          <button style={{
+              background: "#EF4444", // Red for warning
+              color: "white",
+              border: "none",
+              width: "60px",
+              height: "60px",
+              borderRadius: "50%", // Circle
+              boxShadow: "0 4px 12px rgba(239, 68, 68, 0.4)",
+              cursor: "pointer",
+              fontSize: "24px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center"
+            }}>
+            ⚠️
+          </button>
+        </Link>
+      </div>
     </div>
   );
 }
+
