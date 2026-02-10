@@ -9,8 +9,7 @@ export default function Home() {
       cuisine: "Indian",
       rating: 4.7,
       description: "Authentic Indian flavors with modern twists.",
-      image:
-        "https://images.unsplash.com/photo-1600628422011-6e4c62b65a19?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.unsplash.com/photo-1600628422011-6e4c62b65a19?auto=format&fit=crop&w=800&q=80",
     },
     {
       id: 2,
@@ -18,8 +17,7 @@ export default function Home() {
       cuisine: "Japanese",
       rating: 4.9,
       description: "Fresh sushi and sashimi prepared by expert chefs.",
-      image:
-        "https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=800&q=80",
     },
     {
       id: 3,
@@ -27,15 +25,36 @@ export default function Home() {
       cuisine: "Italian",
       rating: 4.8,
       description: "Handmade pasta and traditional Italian dishes.",
-      image:
-        "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80",
+    },
+    {
+      id: 4,
+      name: "Tacos El Sol",
+      cuisine: "Mexican",
+      rating: 4.6,
+      description: "Street-style tacos with the freshest guacamole.",
+      image: "https://images.unsplash.com/photo-15652995078848-923884799029?auto=format&fit=crop&w=800&q=80",
+    },
+    {
+      id: 5,
+      name: "Bangkok Wok",
+      cuisine: "Thai",
+      rating: 4.8,
+      description: "Spicy Pad Thai and authentic green curry.",
+      image: "https://images.unsplash.com/photo-15625656520-a4fd976237d2?auto=format&fit=crop&w=800&q=80",
+    },
+    {
+      id: 6,
+      name: "The Burger Joint",
+      cuisine: "American",
+      rating: 4.5,
+      description: "Juicy beef burgers with hand-cut fries.",
+      image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80",
     },
   ];
 
-  // 1. State for Filtering
   const [filter, setFilter] = useState("All");
 
-  // 2. Filter Logic
   const filteredRestaurants =
     filter === "All"
       ? restaurants
@@ -49,7 +68,7 @@ export default function Home() {
         </h2>
         <p>Explore cuisines, reserve tables, or pre-order your meal!</p>
 
-        {/* 3. Filter Dropdown */}
+        {/* Filter Dropdown */}
         <div style={{ marginTop: "20px" }}>
           <select
             value={filter}
@@ -63,9 +82,12 @@ export default function Home() {
             }}
           >
             <option value="All">All Cuisines</option>
-            <option value="Indian">🌶️ Indian (Spicy)</option>
+            <option value="Indian">🌶️ Indian</option>
             <option value="Japanese">🍣 Japanese</option>
             <option value="Italian">🍝 Italian</option>
+            <option value="Mexican">🌮 Mexican</option>
+            <option value="Thai">🍜 Thai</option>
+            <option value="American">🍔 American</option>
           </select>
         </div>
       </section>
@@ -150,28 +172,54 @@ export default function Home() {
           </div>
         ))}
       </div>
-            {/* NEW: Floating Action Button (Trending) */}
-      <div style={{ position: "fixed", bottom: "30px", right: "30px", zIndex: 100 }}>
-        <Link to="/allergies">
-          <button style={{
-              background: "#EF4444", // Red for warning
-              color: "white",
-              border: "none",
-              width: "60px",
-              height: "60px",
-              borderRadius: "50%", // Circle
-              boxShadow: "0 4px 12px rgba(239, 68, 68, 0.4)",
-              cursor: "pointer",
-              fontSize: "24px",
+
+      {/* NEW: Floating Action Panel with Label */}
+      <div
+        style={{
+          position: "fixed",
+          bottom: "30px",
+          right: "30px",
+          zIndex: 100,
+          display: "flex",
+          alignItems: "center",
+          boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
+          borderRadius: "50px",
+          padding: "5px",
+          background: "#EF4444", // Red
+          transition: "transform 0.2s",
+          cursor: "pointer",
+        }}
+        onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
+        onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
+      >
+        <Link
+          to="/allergies"
+          style={{
+            textDecoration: "none",
+            color: "white",
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          <span style={{ fontWeight: "bold", padding: "0 10px 0 15px", fontSize: "15px" }}>
+            Allergy Chat
+          </span>
+          <span
+            style={{
+              background: "rgba(255,255,255,0.2)",
+              width: "40px",
+              height: "40px",
+              borderRadius: "50%",
               display: "flex",
               alignItems: "center",
-              justifyContent: "center"
-            }}>
+              justifyContent: "center",
+              fontSize: "20px",
+            }}
+          >
             ⚠️
-          </button>
+          </span>
         </Link>
       </div>
     </div>
   );
 }
-
