@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Home() {
-      const restaurants = [
+       const restaurants = [
     {
       id: 1,
       name: "Spice Route",
       cuisine: "Indian",
       rating: 4.7,
       description: "Authentic Indian flavors with modern twists.",
-      image: "https://images.unsplash.com/photo-1585937421612-70a008356f47?auto=format&fit=crop&w=800&q=80",
+      image: "indiancuisine.jpg",
     },
     {
       id: 2,
@@ -17,7 +17,7 @@ export default function Home() {
       cuisine: "Japanese",
       rating: 4.9,
       description: "Fresh sushi and sashimi prepared by expert chefs.",
-      image: "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=800&q=80",
+      image: "sushicuisine.jpg",
     },
     {
       id: 3,
@@ -25,7 +25,7 @@ export default function Home() {
       cuisine: "Italian",
       rating: 4.8,
       description: "Handmade pasta and traditional Italian dishes.",
-      image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80",
+      image: "italiancuisine.jpg",
     },
     {
       id: 4,
@@ -33,7 +33,7 @@ export default function Home() {
       cuisine: "Mexican",
       rating: 4.6,
       description: "Street-style tacos with the freshest guacamole.",
-      image: "https://images.unsplash.com/photo-15652995078873-56f4b0567391?auto=format&fit=crop&w=800&q=80",
+      image: "tacocuisine.jpg",
     },
     {
       id: 5,
@@ -41,7 +41,7 @@ export default function Home() {
       cuisine: "Thai",
       rating: 4.8,
       description: "Spicy Pad Thai and authentic green curry.",
-      image: "https://images.unsplash.com/photo-15625656520-a4fd976237d2?auto=format&fit=crop&w=800&q=80",
+      image: "thaicuisine.jpg",
     },
     {
       id: 6,
@@ -49,7 +49,7 @@ export default function Home() {
       cuisine: "American",
       rating: 4.5,
       description: "Juicy beef burgers with hand-cut fries.",
-      image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80",
+      image: "burgercusine.jpg",
     },
   ];
   const [filter, setFilter] = useState("All");
@@ -222,6 +222,7 @@ export default function Home() {
     </div>
   );
 }
+
 
 
 
