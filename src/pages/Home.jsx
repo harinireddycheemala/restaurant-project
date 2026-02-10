@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Home() {
-  const restaurants = [
+    const restaurants = [
     {
       id: 1,
       name: "Spice Route",
       cuisine: "Indian",
       rating: 4.7,
       description: "Authentic Indian flavors with modern twists.",
-      image: "https://images.unsplash.com/photo-1600628422011-6e4c62b65a19?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.unsplash.com/photo-1585937421612-70a008356f47?auto=format&fit=crop&w=800&q=80",
     },
     {
       id: 2,
@@ -17,7 +17,7 @@ export default function Home() {
       cuisine: "Japanese",
       rating: 4.9,
       description: "Fresh sushi and sashimi prepared by expert chefs.",
-      image: "https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=800&q=80",
     },
     {
       id: 3,
@@ -25,7 +25,7 @@ export default function Home() {
       cuisine: "Italian",
       rating: 4.8,
       description: "Handmade pasta and traditional Italian dishes.",
-      image: "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80",
     },
     {
       id: 4,
@@ -33,7 +33,7 @@ export default function Home() {
       cuisine: "Mexican",
       rating: 4.6,
       description: "Street-style tacos with the freshest guacamole.",
-      image: "https://images.unsplash.com/photo-15652995078848-923884799029?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.unsplash.com/photo-15652995078873-56f4b0567391?auto=format&fit=crop&w=800&q=80",
     },
     {
       id: 5,
@@ -52,7 +52,6 @@ export default function Home() {
       image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80",
     },
   ];
-
   const [filter, setFilter] = useState("All");
 
   const filteredRestaurants =
@@ -223,3 +222,4 @@ export default function Home() {
     </div>
   );
 }
+
