@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Home() {
@@ -32,26 +32,35 @@ export default function Home() {
     },
   ];
 
+  // 1. State for Filtering
+  const [filter, setFilter] = useState("All");
+
+  // 2. Filter Logic
+  const filteredRestaurants =
+    filter === "All"
+      ? restaurants
+      : restaurants.filter((res) => res.cuisine === filter);
+
   return (
     <div>
-            {/* Header with Filters */}
       <section style={{ textAlign: "center", margin: "30px 0" }}>
         <h2 style={{ fontSize: "28px", color: "#4f46e5" }}>
           🍴 Discover Restaurants
         </h2>
         <p>Explore cuisines, reserve tables, or pre-order your meal!</p>
 
-        {/* NEW: Filter Dropdown */}
+        {/* 3. Filter Dropdown */}
         <div style={{ marginTop: "20px" }}>
-          <select 
+          <select
+            value={filter}
+            onChange={(e) => setFilter(e.target.value)}
             style={{
-              padding: "10px 20px", 
-              borderRadius: "8px", 
+              padding: "10px 20px",
+              borderRadius: "8px",
               border: "1px solid #ccc",
               fontSize: "16px",
-              color: "#333"
+              color: "#333",
             }}
-            onChange={(e) => alert("Filtering by: " + e.target.value)}
           >
             <option value="All">All Cuisines</option>
             <option value="Indian">🌶️ Indian (Spicy)</option>
@@ -70,7 +79,7 @@ export default function Home() {
           justifyContent: "center",
         }}
       >
-        {restaurants.map((res) => (
+        {filteredRestaurants.map((res) => (
           <div
             key={res.id}
             style={{
@@ -144,7 +153,3 @@ export default function Home() {
     </div>
   );
 }
-
-
-
-
