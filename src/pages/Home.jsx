@@ -2,16 +2,14 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Home() {
-  
-     const restaurants = [
+  const restaurants = [
     {
       id: 1,
       name: "Spice Route",
       cuisine: "Indian",
       rating: 4.7,
       description: "Authentic Indian flavors with modern twists.",
-      // Direct link to your GitHub file
-      image: "https://raw.githubusercontent.com/harinireddycheemala/restaurant-project/main/indiancuisine.jpg",
+      image: "/indiancuisine.jpg",
     },
     {
       id: 2,
@@ -19,7 +17,7 @@ export default function Home() {
       cuisine: "Japanese",
       rating: 4.9,
       description: "Fresh sushi and sashimi prepared by expert chefs.",
-      image: "https://raw.githubusercontent.com/harinireddycheemala/restaurant-project/main/sushicuisine.jpg",
+      image: "/sushicuisine.jpg",
     },
     {
       id: 3,
@@ -27,7 +25,7 @@ export default function Home() {
       cuisine: "Italian",
       rating: 4.8,
       description: "Handmade pasta and traditional Italian dishes.",
-      image: "https://raw.githubusercontent.com/harinireddycheemala/restaurant-project/main/italiancuisine.jpg",
+      image: "/italiancuisine.jpg",
     },
     {
       id: 4,
@@ -35,7 +33,7 @@ export default function Home() {
       cuisine: "Mexican",
       rating: 4.6,
       description: "Street-style tacos with the freshest guacamole.",
-      image: "https://raw.githubusercontent.com/harinireddycheemala/restaurant-project/main/tacocuisine.jpg",
+      image: "/tacocuisine.jpg",
     },
     {
       id: 5,
@@ -43,7 +41,7 @@ export default function Home() {
       cuisine: "Thai",
       rating: 4.8,
       description: "Spicy Pad Thai and authentic green curry.",
-      image: "https://raw.githubusercontent.com/harinireddycheemala/restaurant-project/main/thaicuisine.jpg",
+      image: "/thaicuisine.jpg",
     },
     {
       id: 6,
@@ -51,7 +49,7 @@ export default function Home() {
       cuisine: "American",
       rating: 4.5,
       description: "Juicy beef burgers with hand-cut fries.",
-      image: "https://raw.githubusercontent.com/harinireddycheemala/restaurant-project/main/burgercusine.jpg",
+      image: "/burgercusine.jpg",
     },
   ];
 
@@ -177,7 +175,7 @@ export default function Home() {
         ))}
       </div>
 
-      {/* Floating Action Button (Trending) */}
+      {/* Floating Action Button */}
       <div style={{ position: "fixed", bottom: "30px", right: "30px", zIndex: 100 }}>
         <Link to="/allergies">
           <button
@@ -203,6 +201,7 @@ export default function Home() {
     </div>
   );
 }
+
 
 
 
