@@ -2,14 +2,16 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Home() {
-  const restaurants = [
+  
+     const restaurants = [
     {
       id: 1,
       name: "Spice Route",
       cuisine: "Indian",
       rating: 4.7,
       description: "Authentic Indian flavors with modern twists.",
-      image: "indiancuisine.jpg",
+      // Direct link to your GitHub file
+      image: "https://raw.githubusercontent.com/harinireddycheemala/restaurant-project/main/indiancuisine.jpg",
     },
     {
       id: 2,
@@ -17,7 +19,7 @@ export default function Home() {
       cuisine: "Japanese",
       rating: 4.9,
       description: "Fresh sushi and sashimi prepared by expert chefs.",
-      image: "sushicuisine.jpg",
+      image: "https://raw.githubusercontent.com/harinireddycheemala/restaurant-project/main/sushicuisine.jpg",
     },
     {
       id: 3,
@@ -25,7 +27,7 @@ export default function Home() {
       cuisine: "Italian",
       rating: 4.8,
       description: "Handmade pasta and traditional Italian dishes.",
-      image: "italiancuisine.jpg",
+      image: "https://raw.githubusercontent.com/harinireddycheemala/restaurant-project/main/italiancuisine.jpg",
     },
     {
       id: 4,
@@ -33,7 +35,7 @@ export default function Home() {
       cuisine: "Mexican",
       rating: 4.6,
       description: "Street-style tacos with the freshest guacamole.",
-      image: "tacocuisine.jpg",
+      image: "https://raw.githubusercontent.com/harinireddycheemala/restaurant-project/main/tacocuisine.jpg",
     },
     {
       id: 5,
@@ -41,7 +43,7 @@ export default function Home() {
       cuisine: "Thai",
       rating: 4.8,
       description: "Spicy Pad Thai and authentic green curry.",
-      image: "thaicuisine.jpg",
+      image: "https://raw.githubusercontent.com/harinireddycheemala/restaurant-project/main/thaicuisine.jpg",
     },
     {
       id: 6,
@@ -49,7 +51,7 @@ export default function Home() {
       cuisine: "American",
       rating: 4.5,
       description: "Juicy beef burgers with hand-cut fries.",
-      image: "burgercusine.jpg",
+      image: "https://raw.githubusercontent.com/harinireddycheemala/restaurant-project/main/burgercusine.jpg",
     },
   ];
 
@@ -201,6 +203,7 @@ export default function Home() {
     </div>
   );
 }
+
 
 
 
