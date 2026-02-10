@@ -2,17 +2,14 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Home() {
-     const restaurants = [
+      const restaurants = [
     {
       id: 1,
       name: "Spice Route",
       cuisine: "Indian",
       rating: 4.7,
       description: "Authentic Indian flavors with modern twists.",
-      image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/1.gif", 
-      // Note: Using a generic reliable placeholder url first to test, then we swap.
-      // Let's use Wikimedia Commons (Very reliable)
-      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Chicken_Tikka_Masala.jpg/800px-Chicken_Tikka_Masala.jpg",
+      image: "https://images.unsplash.com/photo-1585937421612-70a008356f47?auto=format&fit=crop&w=800&q=80",
     },
     {
       id: 2,
@@ -20,7 +17,7 @@ export default function Home() {
       cuisine: "Japanese",
       rating: 4.9,
       description: "Fresh sushi and sashimi prepared by expert chefs.",
-      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Sushi_platter.jpg/800px-Sushi_platter.jpg",
+      image: "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=800&q=80",
     },
     {
       id: 3,
@@ -28,7 +25,7 @@ export default function Home() {
       cuisine: "Italian",
       rating: 4.8,
       description: "Handmade pasta and traditional Italian dishes.",
-      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Lasagna_with_bechamel_sauce.jpg/800px-Lasagna_with_bechamel_sauce.jpg",
+      image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80",
     },
     {
       id: 4,
@@ -36,7 +33,7 @@ export default function Home() {
       cuisine: "Mexican",
       rating: 4.6,
       description: "Street-style tacos with the freshest guacamole.",
-      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Tacos_al_Pastor.jpg/800px-Tacos_al_Pastor.jpg",
+      image: "https://images.unsplash.com/photo-15652995078873-56f4b0567391?auto=format&fit=crop&w=800&q=80",
     },
     {
       id: 5,
@@ -44,7 +41,7 @@ export default function Home() {
       cuisine: "Thai",
       rating: 4.8,
       description: "Spicy Pad Thai and authentic green curry.",
-      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Pad_Thai_Kung_Shrimp.jpg/800px-Pad_Thai_Kung_Shrimp.jpg",
+      image: "https://images.unsplash.com/photo-15625656520-a4fd976237d2?auto=format&fit=crop&w=800&q=80",
     },
     {
       id: 6,
@@ -52,7 +49,7 @@ export default function Home() {
       cuisine: "American",
       rating: 4.5,
       description: "Juicy beef burgers with hand-cut fries.",
-      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Cheeseburger.jpg/800px-Cheeseburger.jpg",
+      image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80",
     },
   ];
   const [filter, setFilter] = useState("All");
@@ -225,6 +222,7 @@ export default function Home() {
     </div>
   );
 }
+
 
 
 
