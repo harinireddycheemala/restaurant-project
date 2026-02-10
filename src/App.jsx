@@ -1,3 +1,4 @@
+import AllergyChat from "./pages/AllergyChat";
 import React from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import Login from "./Login"; // 1. Import Login
@@ -57,6 +58,7 @@ function App() {
       {/* Page Content */}
       <div style={{ padding: "20px", flexGrow: 1 }}>
         <Routes>
+          <Route path="/allergies" element={<AllergyChat />} />
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/login" element={<Login />} /> {/* 3. Login Route */}
