@@ -2,14 +2,17 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Home() {
-      const restaurants = [
+     const restaurants = [
     {
       id: 1,
       name: "Spice Route",
       cuisine: "Indian",
       rating: 4.7,
       description: "Authentic Indian flavors with modern twists.",
-      image: "https://picsum.photos/seed/indianfood/800/600",
+      image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/1.gif", 
+      // Note: Using a generic reliable placeholder url first to test, then we swap.
+      // Let's use Wikimedia Commons (Very reliable)
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Chicken_Tikka_Masala.jpg/800px-Chicken_Tikka_Masala.jpg",
     },
     {
       id: 2,
@@ -17,7 +20,7 @@ export default function Home() {
       cuisine: "Japanese",
       rating: 4.9,
       description: "Fresh sushi and sashimi prepared by expert chefs.",
-      image: "https://picsum.photos/seed/sushi/800/600",
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Sushi_platter.jpg/800px-Sushi_platter.jpg",
     },
     {
       id: 3,
@@ -25,7 +28,7 @@ export default function Home() {
       cuisine: "Italian",
       rating: 4.8,
       description: "Handmade pasta and traditional Italian dishes.",
-      image: "https://picsum.photos/seed/pasta/800/600",
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Lasagna_with_bechamel_sauce.jpg/800px-Lasagna_with_bechamel_sauce.jpg",
     },
     {
       id: 4,
@@ -33,7 +36,7 @@ export default function Home() {
       cuisine: "Mexican",
       rating: 4.6,
       description: "Street-style tacos with the freshest guacamole.",
-      image: "https://picsum.photos/seed/tacos/800/600",
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Tacos_al_Pastor.jpg/800px-Tacos_al_Pastor.jpg",
     },
     {
       id: 5,
@@ -41,7 +44,7 @@ export default function Home() {
       cuisine: "Thai",
       rating: 4.8,
       description: "Spicy Pad Thai and authentic green curry.",
-      image: "https://picsum.photos/seed/thaifood/800/600",
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Pad_Thai_Kung_Shrimp.jpg/800px-Pad_Thai_Kung_Shrimp.jpg",
     },
     {
       id: 6,
@@ -49,7 +52,7 @@ export default function Home() {
       cuisine: "American",
       rating: 4.5,
       description: "Juicy beef burgers with hand-cut fries.",
-      image: "https://picsum.photos/seed/burger/800/600",
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Cheeseburger.jpg/800px-Cheeseburger.jpg",
     },
   ];
   const [filter, setFilter] = useState("All");
@@ -222,5 +225,6 @@ export default function Home() {
     </div>
   );
 }
+
 
 
