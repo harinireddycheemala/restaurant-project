@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Home() {
-       const restaurants = [
+  const restaurants = [
     {
       id: 1,
       name: "Spice Route",
@@ -52,8 +52,11 @@ export default function Home() {
       image: "burgercusine.jpg",
     },
   ];
+
+  // State for Filtering
   const [filter, setFilter] = useState("All");
 
+  // Filter Logic
   const filteredRestaurants =
     filter === "All"
       ? restaurants
@@ -172,57 +175,32 @@ export default function Home() {
         ))}
       </div>
 
-      {/* NEW: Floating Action Panel with Label */}
-      <div
-        style={{
-          position: "fixed",
-          bottom: "30px",
-          right: "30px",
-          zIndex: 100,
-          display: "flex",
-          alignItems: "center",
-          boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
-          borderRadius: "50px",
-          padding: "5px",
-          background: "#EF4444", // Red
-          transition: "transform 0.2s",
-          cursor: "pointer",
-        }}
-        onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
-        onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
-      >
-        <Link
-          to="/allergies"
-          style={{
-            textDecoration: "none",
-            color: "white",
-            display: "flex",
-            alignItems: "center",
-          }}
-        >
-          <span style={{ fontWeight: "bold", padding: "0 10px 0 15px", fontSize: "15px" }}>
-            Allergy Chat
-          </span>
-          <span
+      {/* Floating Action Button (Trending) */}
+      <div style={{ position: "fixed", bottom: "30px", right: "30px", zIndex: 100 }}>
+        <Link to="/allergies">
+          <button
             style={{
-              background: "rgba(255,255,255,0.2)",
-              width: "40px",
-              height: "40px",
-              borderRadius: "50%",
+              background: "#EF4444", // Red for warning
+              color: "white",
+              border: "none",
+              width: "60px",
+              height: "60px",
+              borderRadius: "50%", // Circle
+              boxShadow: "0 4px 12px rgba(239, 68, 68, 0.4)",
+              cursor: "pointer",
+              fontSize: "24px",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              fontSize: "20px",
             }}
           >
             ⚠️
-          </span>
+          </button>
         </Link>
       </div>
     </div>
   );
 }
-
 
 
 
