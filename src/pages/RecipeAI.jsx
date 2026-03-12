@@ -14,16 +14,57 @@ const RecipeAI = () => {
     }
   };
 
-  const generate = () => {
+    const generate = () => {
     if (selected.length !== 3) return alert("Select 3 ingredients");
+    
     const s = selected;
     let name = "Fusion Stir-Fry";
-    if (s.includes('Eggs') && s.includes('Bread') && s.includes('Cheese')) name = "Cheese Omelette Toast";
-    else if (s.includes('Chicken') && s.includes('Rice') && s.includes('Onion')) name = "Chicken Biryani";
-    else if (s.includes('Pasta') && s.includes('Tomato') && s.includes('Cheese')) name = "Pasta Marinara";
-    else if (s.includes('Eggs') && s.includes('Milk') && s.includes('Cheese')) name = "Scrambled Eggs";
-    else if (s.includes('Bread') && s.includes('Cheese') && s.includes('Tomato')) name = "Pizza Toast";
-    setResult(name);
+
+    // Improved Logic Tree
+    if (s.includes('Eggs') && s.includes('Bread') && s.includes('Cheese')) {
+      name = "Cheese Omelette Toast";
+    } else if (s.includes('Chicken') && s.includes('Rice') && s.includes('Onion')) {
+      name = "Chicken Biryani";
+    } else if (s.includes('Pasta') && s.includes('Tomato') && s.includes('Cheese')) {
+      name = "Pasta Marinara";
+    } else if (s.includes('Eggs') && s.includes('Milk') && s.includes('Cheese')) {
+      name = "Scrambled Eggs";
+    } else if (s.includes('Bread') && s.includes('Cheese') && s.includes('Tomato')) {
+      name = "Pizza Toast";
+    } else if (s.includes('Rice') && s.includes('Chicken') && s.includes('Onion')) {
+      name = "Chicken Fried Rice";
+    } else if (s.includes('Pasta') && s.includes('Cheese') && s.includes('Tomato')) {
+      name = "Italian Pasta";
+    } else if (s.includes('Bread') && s.includes('Eggs') && s.includes('Cheese')) {
+      name = "Breakfast Sandwich";
+    } else if (s.includes('Chicken') && s.includes('Bread') && s.includes('Cheese')) {
+      name = "Chicken Club Sandwich";
+    } else if (s.includes('Rice') && s.includes('Pasta') && s.includes('Tomato')) {
+      name = "Risotto Primavera";
+    } else if (s.includes('Milk') && s.includes('Cheese') && s.includes('Tomato')) {
+      name = "Creamy Tomato Soup";
+    } else if (s.includes('Onion') && s.includes('Pasta') && s.includes('Cheese')) {
+      name = "Caramelized Onion Pasta";
+    } else if (s.includes('Milk') && s.includes('Eggs') && s.includes('Onion')) {
+      name = "French Onion Soup";
+    } else if (s.includes('Chicken') && s.includes('Milk') && s.includes('Pasta')) {
+      name = "Creamy Chicken Pasta";
+    } else if (s.includes('Rice') && s.includes('Eggs') && s.includes('Onion')) {
+      name = "Egg Fried Rice";
+    } else if (s.includes('Tomato') && s.includes('Pasta') && s.includes('Onion')) {
+      name = "Pasta with Tomato Sauce";
+    } else if (s.includes('Cheese') && s.includes('Bread') && s.includes('Onion')) {
+      name = "Cheese Onion Bread";
+    } else if (s.includes('Milk') && s.includes('Rice') && s.includes('Eggs')) {
+      name = "Congee (Rice Porridge)";
+    } else {
+      // Fallback for unmatched combinations
+      name = "Special " + s[0] + " " + s[1] + " " + s[2] + " Bowl";
+    }
+    
+    const description = "A delicious dish made with " + s.join(", ") + ".";
+    
+    setResult({ name, description });
   };
 
   return (
@@ -50,8 +91,16 @@ const RecipeAI = () => {
       <button onClick={generate} style={{ marginTop: "20px", padding: "10px 20px", background: "#ea580c", color: "white", border: "none", borderRadius: "8px", cursor: "pointer" }}>
         Generate Recipe
       </button>
-      {result && <h3 style={{ marginTop: "20px", color: "#10B981" }}>Suggested: {result}</h3>}
-    </div>
+            {/* Fixed Result Display */}
+      {result && (
+        <div style={{ marginTop: "30px", padding: "20px", background: "#f3f4f6", borderRadius: "10px", border: "1px solid #ddd" }}>
+          <h3 style={{ color: "#ea580c", margin: "0 0 10px 0" }}>🍽️ Suggested: {result.name}</h3>
+          <p style={{ color: "#555", lineHeight: "1.5" }}>{result.description}</p>
+          <button onClick={() => setSelected([])} style={{ padding: "8px 16px", background: "#ef4444", color: "white", border: "none", borderRadius: "6px", cursor: "pointer", marginTop: "15px" }}>
+            Try Again
+          </button>
+        </div>
+      )}
   );
 };
 
