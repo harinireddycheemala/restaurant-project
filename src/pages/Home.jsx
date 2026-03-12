@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Home() {
@@ -9,8 +9,7 @@ export default function Home() {
       cuisine: "Indian",
       rating: 4.7,
       description: "Authentic Indian flavors with modern twists.",
-      image:
-        "https://images.unsplash.com/photo-1600628422011-6e4c62b65a19?auto=format&fit=crop&w=800&q=80",
+      image: "/indiancuisine.jpg",
     },
     {
       id: 2,
@@ -18,8 +17,7 @@ export default function Home() {
       cuisine: "Japanese",
       rating: 4.9,
       description: "Fresh sushi and sashimi prepared by expert chefs.",
-      image:
-        "https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=800&q=80",
+      image: "/sushicuisine.jpg",
     },
     {
       id: 3,
@@ -27,10 +25,42 @@ export default function Home() {
       cuisine: "Italian",
       rating: 4.8,
       description: "Handmade pasta and traditional Italian dishes.",
-      image:
-        "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80",
+      image: "/italiancuisine.jpg",
+    },
+    {
+      id: 4,
+      name: "Tacos El Sol",
+      cuisine: "Mexican",
+      rating: 4.6,
+      description: "Street-style tacos with the freshest guacamole.",
+      image: "/tacocuisine.jpg",
+    },
+    {
+      id: 5,
+      name: "Bangkok Wok",
+      cuisine: "Thai",
+      rating: 4.8,
+      description: "Spicy Pad Thai and authentic green curry.",
+      image: "/thaicuisine.jpg",
+    },
+    {
+      id: 6,
+      name: "The Burger Joint",
+      cuisine: "American",
+      rating: 4.5,
+      description: "Juicy beef burgers with hand-cut fries.",
+      image: "/burgercusine.jpg",
     },
   ];
+
+  // State for Filtering
+  const [filter, setFilter] = useState("All");
+
+  // Filter Logic
+  const filteredRestaurants =
+    filter === "All"
+      ? restaurants
+      : restaurants.filter((res) => res.cuisine === filter);
 
   return (
     <div>
@@ -39,6 +69,29 @@ export default function Home() {
           🍴 Discover Restaurants
         </h2>
         <p>Explore cuisines, reserve tables, or pre-order your meal!</p>
+
+        {/* Filter Dropdown */}
+        <div style={{ marginTop: "20px" }}>
+          <select
+            value={filter}
+            onChange={(e) => setFilter(e.target.value)}
+            style={{
+              padding: "10px 20px",
+              borderRadius: "8px",
+              border: "1px solid #ccc",
+              fontSize: "16px",
+              color: "#333",
+            }}
+          >
+            <option value="All">All Cuisines</option>
+            <option value="Indian">🌶️ Indian</option>
+            <option value="Japanese">🍣 Japanese</option>
+            <option value="Italian">🍝 Italian</option>
+            <option value="Mexican">🌮 Mexican</option>
+            <option value="Thai">🍜 Thai</option>
+            <option value="American">🍔 American</option>
+          </select>
+        </div>
       </section>
 
       {/* Restaurant Cards */}
@@ -50,7 +103,7 @@ export default function Home() {
           justifyContent: "center",
         }}
       >
-        {restaurants.map((res) => (
+        {filteredRestaurants.map((res) => (
           <div
             key={res.id}
             style={{
@@ -121,9 +174,30 @@ export default function Home() {
           </div>
         ))}
       </div>
+
+      {/* Floating Action Button */}
+      <div style={{ position: "fixed", bottom: "30px", right: "30px", zIndex: 100 }}>
+        <Link to="/allergies">
+          <button
+            style={{
+              background: "#EF4444",
+              color: "white",
+              border: "none",
+              width: "60px",
+              height: "60px",
+              borderRadius: "50%",
+              boxShadow: "0 4px 12px rgba(239, 68, 68, 0.4)",
+              cursor: "pointer",
+              fontSize: "24px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            ⚠️
+          </button>
+        </Link>
+      </div>
     </div>
   );
 }
-
-
-
