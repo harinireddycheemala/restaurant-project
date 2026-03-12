@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import MemoryGame from "./MemoryGame";
 import RecipeAI from "./RecipeAI";
-import Quiz from "./Quiz";
-import MoodMatcher from "./MoodMatcher";
+// Removed Quiz and MoodMatcher as they are in the main nav
 
 const GameArcade = () => {
   const [currentGame, setCurrentGame] = useState(null);
@@ -10,10 +9,11 @@ const GameArcade = () => {
   const games = [
     { id: 'memory', name: "Memory Match", icon: "🧠", desc: "Find matching food pairs (4-10 Pairs)." },
     { id: 'recipe', name: "Recipe AI", icon: "👨‍🍳", desc: "Generate recipes from ingredients." },
-    { id: 'quiz', name: "Craving Quiz", icon: "📝", desc: "Test your food knowledge." },
-    { id: 'mood', name: "Mood Matcher", icon: "🎭", desc: "Find food based on your mood." }
+    { id: 'trivia', name: "Food Trivia", icon: "🧠", desc: "Test your food knowledge!" },
+    { id: 'speed', name: "Speed Chef", icon: "⚡", desc: "Tap the ingredients fast!" }
   ];
 
+  // ... keep the rest of the return statement the same ...
   return (
     <div style={{ padding: "20px", fontFamily: "Arial, sans-serif", textAlign: "center" }}>
       <h1 style={{ color: "#ea580c" }}>🍊 SmartCrave Arcade</h1>
@@ -51,8 +51,8 @@ const GameArcade = () => {
           {/* Render Selected Game */}
           {currentGame === 'memory' && <MemoryGame />}
           {currentGame === 'recipe' && <RecipeAI />}
-          {currentGame === 'quiz' && <Quiz />}
-          {currentGame === 'mood' && <MoodMatcher />}
+          {currentGame === 'trivia' && <div>Food Trivia (Coming Soon)</div>}
+          {currentGame === 'speed' && <div>Speed Chef (Coming Soon)</div>}
         </div>
       )}
     </div>
