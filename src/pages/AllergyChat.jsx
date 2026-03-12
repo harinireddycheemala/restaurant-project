@@ -5,7 +5,6 @@ const AllergyChat = () => {
   const [step, setStep] = useState(1);
   const [hasAllergy, setHasAllergy] = useState(null);
   const [selectedAllergens, setSelectedAllergens] = useState([]);
-  const [customization, setCustomization] = useState("");
   const allergenOptions = ["Nuts", "Dairy", "Gluten", "Shellfish", "Eggs"];
 
   const toggleAllergen = (item) => {
@@ -17,20 +16,23 @@ const AllergyChat = () => {
   };
 
   return (
-    <div style={{ padding: "20px", maxWidth: "600px", margin: "0 auto", fontFamily: "Arial, sans-serif" }}>
-      <div style={{ marginBottom: "20px" }}>
-        <Link to="/" style={{ textDecoration: "none", color: "#10B981", fontWeight: "bold" }}>← Back to Home</Link>
+    <div style={{ padding: "20px", fontFamily: "Arial, sans-serif", textAlign: "center" }}>
+      <div style={{ marginBottom: "20px", textAlign: "left" }}>
+        <Link to="/" style={{ textDecoration: "none", color: "#10B981", fontWeight: "bold" }}>
+          ← Back to Home
+        </Link>
       </div>
 
-      <div style={{ background: "#F9FAFB", padding: "20px", borderRadius: "16px", boxShadow: "0 4px 15px rgba(0,0,0,0.05)" }}>
+      <div style={{ background: "#F9FAFB", padding: "20px", borderRadius: "16px" }}>
         
         {/* Step 1 */}
         {step === 1 && (
           <div>
-            <div style={{ background: "#10B981", color: "white", padding: "10px 15px", borderRadius: "12px", display: "inline-block", marginBottom: "15px" }}>🤖 Hi! I'm here to help you find safe food. Do you have any food allergies?</div>
-            <div style={{ marginTop: "15px", display: "flex", gap: "10px", justifyContent: "flex-end" }}>
-              <button onClick={() => { setHasAllergy(false); setStep(4); }} style={{ padding: "10px 20px", background: "white", border: "1px solid #ccc", borderRadius: "20px", cursor: "pointer" }}>No, I'm good.</button>
-              <button onClick={() => { setHasAllergy(true); setStep(2); }} style={{ padding: "10px 20px", background: "#10B981", color: "white", border: "none", borderRadius: "20px", cursor: "pointer", fontWeight: "bold" }}>Yes, I do.</button>
+            <h2 style={{ color: "#333" }}>🤖 Allergy Check</h2>
+            <p>Do you have any food allergies?</p>
+            <div style={{ marginTop: "20px", display: "flex", gap: "10px", justifyContent: "center" }}>
+              <button onClick={() => { setHasAllergy(false); setStep(4); }} style={{ padding: "10px 20px", background: "white", border: "1px solid #ccc", borderRadius: "8px", cursor: "pointer" }}>No</button>
+              <button onClick={() => { setHasAllergy(true); setStep(2); }} style={{ padding: "10px 20px", background: "#10B981", color: "white", border: "none", borderRadius: "8px", cursor: "pointer" }}>Yes</button>
             </div>
           </div>
         )}
@@ -38,38 +40,24 @@ const AllergyChat = () => {
         {/* Step 2 */}
         {step === 2 && (
           <div>
-             <div style={{ background: "#10B981", color: "white", padding: "10px 15px", borderRadius: "12px", display: "inline-block", marginBottom: "15px" }}>🤖 Got it. Which ingredients are allergic to you? (Select all that apply)</div>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: "10px", marginTop: "15px" }}>
+             <h3 style={{ color: "#333" }}>Select Allergens</h3>
+             <div style={{ display: "flex", flexWrap: "wrap", gap: "10px", marginTop: "15px", justifyContent: "center" }}>
               {allergenOptions.map((item) => (
-                <button key={item} onClick={() => toggleAllergen(item)} style={{ padding: "10px 20px", border: `1px solid ${selectedAllergens.includes(item) ? "#10B981" : "#ccc"}`, background: selectedAllergens.includes(item) ? "#E6FFFA" : "white", borderRadius: "20px", cursor: "pointer", fontWeight: "bold" }}>
+                <button key={item} onClick={() => toggleAllergen(item)} style={{ padding: "10px 20px", border: selectedAllergens.includes(item) ? "2px solid #10B981" : "1px solid #ccc", background: selectedAllergens.includes(item) ? "#E6FFFA" : "white", borderRadius: "8px", cursor: "pointer", fontWeight: "bold" }}>
                   {selectedAllergens.includes(item) ? "✓ " : ""} {item}
                 </button>
               ))}
             </div>
-            <button onClick={() => setStep(3)} style={{ marginTop: "20px", background: "#4f46e5", color: "white", border: "none", padding: "10px 25px", borderRadius: "8px", cursor: "pointer", display: "block", marginLeft: "auto" }}>Next</button>
+            <button onClick={() => setStep(3)} style={{ marginTop: "20px", background: "#4f46e5", color: "white", border: "none", padding: "10px 25px", borderRadius: "8px", cursor: "pointer" }}>Next</button>
           </div>
         )}
 
-        {/* Step 3 */}
+        {/* Step 3: Saved */}
         {step === 3 && (
-          <div>
-             <div style={{ background: "#10B981", color: "white", padding: "10px 15px", borderRadius: "12px", display: "inline-block", marginBottom: "15px" }}>🤖 How should the kitchen handle your order? (e.g. "No nuts on top")</div>
-            <textarea value={customization} onChange={(e) => setCustomization(e.target.value)} placeholder="Type your instructions here..." style={{ width: "100%", height: "100px", padding: "15px", borderRadius: "12px", border: "1px solid #ccc", marginTop: "15px", fontSize: "16px" }} />
-            <button onClick={() => setStep(4)} style={{ marginTop: "20px", background: "#10B981", color: "white", border: "none", padding: "10px 25px", borderRadius: "8px", cursor: "pointer", display: "block", marginLeft: "auto" }}>Save Profile</button>
-          </div>
-        )}
-
-        {/* Step 4 */}
-        {step === 4 && (
-          <div>
-             <div style={{ background: "#10B981", color: "white", padding: "15px 15px", borderRadius: "12px", marginBottom: "15px", textAlign: "center" }}>🛡️ Profile Saved!</div>
-            <div style={{ background: "white", padding: "15px", borderRadius: "12px", border: "1px solid #eee" }}>
-              <p style={{ margin: "0 0 10px 0", color: "#333" }}>{hasAllergy ? <span>We will warn you about: <strong>{selectedAllergens.join(", ")}</strong></span> : <span>No specific allergies set. We will proceed normally.</span>}</p>
-              {customization && <p style={{ margin: "0", color: "#666", fontSize: "14px", fontStyle: "italic" }}>Note: "{customization}"</p>}
-            </div>
-            <div style={{ marginTop: "20px", textAlign: "center" }}>
-              <Link to="/restaurant"><button style={{ background: "#4f46e5", color: "white", border: "none", padding: "12px 25px", borderRadius: "8px", cursor: "pointer" }}>Go to Menu</button></Link>
-            </div>
+          <div style={{ textAlign: "center" }}>
+             <h2 style={{ color: "#10B981" }}>🛡️ Profile Saved!</h2>
+             <p>We will help you stay safe.</p>
+             <Link to="/restaurant"><button style={{ padding: "10px 20px", background: "#10B981", color: "white", border: "none", borderRadius: "8px", cursor: "pointer" }}>Go to Menu</button></Link>
           </div>
         )}
       </div>
