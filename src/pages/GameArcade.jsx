@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import MemoryGame from "./MemoryGame";
 import RecipeAI from "./RecipeAI";
-// Removed Quiz and MoodMatcher as they are in the main nav
+import AllergyChat from "./AllergyChat"; // <--- ADD THIS LINE
+// Removed Quiz and MoodMatcher from imports
 
 const GameArcade = () => {
   const [currentGame, setCurrentGame] = useState(null);
