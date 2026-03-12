@@ -9,6 +9,7 @@ import RestaurantDetail from "./pages/RestaurantDetail";
 import Reservation from "./pages/Reservation";
 import Quiz from "./pages/Quiz";
 import MoodMatcher from "./pages/MoodMatcher";
+import AllergyChat from "./pages/AllergyChat"; // <--- ADD THIS LINE
 
 function App() {
   return (
