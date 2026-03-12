@@ -14,7 +14,7 @@ const RecipeAI = () => {
     }
   };
 
-    const generate = () => {
+  const generate = () => {
     if (selected.length !== 3) return alert("Select 3 ingredients");
     
     const s = selected;
@@ -91,7 +91,8 @@ const RecipeAI = () => {
       <button onClick={generate} style={{ marginTop: "20px", padding: "10px 20px", background: "#ea580c", color: "white", border: "none", borderRadius: "8px", cursor: "pointer" }}>
         Generate Recipe
       </button>
-            {/* Fixed Result Display */}
+      
+      {/* Result Display */}
       {result && (
         <div style={{ marginTop: "30px", padding: "20px", background: "#f3f4f6", borderRadius: "10px", border: "1px solid #ddd" }}>
           <h3 style={{ color: "#ea580c", margin: "0 0 10px 0" }}>🍽️ Suggested: {result.name}</h3>
@@ -101,6 +102,7 @@ const RecipeAI = () => {
           </button>
         </div>
       )}
+    </div>
   );
 };
 
