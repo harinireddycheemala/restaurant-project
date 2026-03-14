@@ -9,7 +9,7 @@ import RestaurantDetail from "./pages/RestaurantDetail";
 import Reservation from "./pages/Reservation";
 import Quiz from "./pages/Quiz";
 import MoodMatcher from "./pages/MoodMatcher";
-import AllergyChat from "./pages/AllergyChat"; // <--- ADD THIS LINE
+import AllergyChat from "./pages/AllergyChat"; // Import added
 
 function App() {
   return (
@@ -81,6 +81,10 @@ function App() {
           <Route path="/reservation" element={<Reservation />} />
           <Route path="/quiz" element={<Quiz />} />
           <Route path="/mood" element={<MoodMatcher />} />
+          
+          {/* <--- THE MISSING ROUTE IS HERE ---> */}
+          <Route path="/allergies" element={<AllergyChat />} />
+          
         </Routes>
       </div>
     </div>
