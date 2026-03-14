@@ -9,7 +9,8 @@ import RestaurantDetail from "./pages/RestaurantDetail";
 import Reservation from "./pages/Reservation";
 import Quiz from "./pages/Quiz";
 import MoodMatcher from "./pages/MoodMatcher";
-import AllergyChat from "./pages/AllergyChat"; // Import added
+import AllergyChat from "./pages/AllergyChat";
+import DietPlan from "./pages/DietPlan"; // <--- ADDED IMPORT
 
 function App() {
   return (
@@ -37,6 +38,10 @@ function App() {
           <Link to="/" style={{ textDecoration: "none", color: "#4f46e5", fontWeight: "500" }}>Home</Link>
           <Link to="/profile" style={{ textDecoration: "none", color: "#4f46e5", fontWeight: "500" }}>Profile</Link>
           <Link to="/cart" style={{ textDecoration: "none", color: "#4f46e5", fontWeight: "500" }}>Cart</Link>
+          
+          {/* <--- ADDED DIET PLAN LINK HERE ---> */}
+          <Link to="/diet" style={{ textDecoration: "none", color: "#2e7d32", fontWeight: "500" }}>Diet Plan</Link>
+
           <Link to="/quiz" style={{ textDecoration: "none", color: "#4f46e5", fontWeight: "500" }}>Quiz</Link>
           <Link to="/mood" style={{ textDecoration: "none", color: "#4f46e5", fontWeight: "500" }}>Mood Matcher</Link>
           
@@ -81,9 +86,10 @@ function App() {
           <Route path="/reservation" element={<Reservation />} />
           <Route path="/quiz" element={<Quiz />} />
           <Route path="/mood" element={<MoodMatcher />} />
-          
-          {/* <--- THE MISSING ROUTE IS HERE ---> */}
           <Route path="/allergies" element={<AllergyChat />} />
+          
+          {/* <--- ADDED DIET PLAN ROUTE HERE ---> */}
+          <Route path="/diet" element={<DietPlan />} />
           
         </Routes>
       </div>
