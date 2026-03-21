@@ -1,10 +1,8 @@
-import FoodTrivia from "./FoodTrivia";
-import SpeedChef from "./SpeedChef";
 import React, { useState } from "react";
 import MemoryGame from "./MemoryGame";
 import RecipeAI from "./RecipeAI";
-import AllergyChat from "./AllergyChat"; // <--- ADD THIS LINE
-// Removed Quiz and MoodMatcher from imports
+import FoodTrivia from "./FoodTrivia";
+import SpeedChef from "./SpeedChef";
 
 const GameArcade = () => {
   const [currentGame, setCurrentGame] = useState(null);
@@ -16,7 +14,6 @@ const GameArcade = () => {
     { id: 'speed', name: "Speed Chef", icon: "⚡", desc: "Tap the ingredients fast!" }
   ];
 
-  // ... keep the rest of the return statement the same ...
   return (
     <div style={{ padding: "20px", fontFamily: "Arial, sans-serif", textAlign: "center" }}>
       <h1 style={{ color: "#ea580c" }}>🍊 SmartCrave Arcade</h1>
@@ -54,8 +51,9 @@ const GameArcade = () => {
           {/* Render Selected Game */}
           {currentGame === 'memory' && <MemoryGame />}
           {currentGame === 'recipe' && <RecipeAI />}
-          {currentGame === 'trivia' &&  <FoodTrivia />}
-          {currentGame === 'speed' &&  <FoodTrivia />}
+          {currentGame === 'trivia' && <FoodTrivia />}
+          {/* <--- FIXED THE BUG BELOW ---> */}
+          {currentGame === 'speed' && <SpeedChef />}
         </div>
       )}
     </div>
