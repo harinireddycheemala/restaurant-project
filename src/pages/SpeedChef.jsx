@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+ import React, { useState, useEffect } from "react";
 
 const SpeedChef = () => {
   const ingredients = ["🍅 Tomato", "🧀 Cheese", "🥬 Lettuce", "🥩 Meat", "🍞 Bread", "🥕 Carrot", "🧅 Onion", "🥔 Potato"];
