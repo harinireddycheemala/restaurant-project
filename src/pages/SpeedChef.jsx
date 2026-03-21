@@ -36,7 +36,6 @@ const SpeedChef = () => {
       setScore(score + 10);
       pickNewTarget();
     } else {
-      // Penalty for wrong click
       setTimeLeft(Math.max(0, timeLeft - 2));
     }
   };
@@ -75,11 +74,8 @@ const SpeedChef = () => {
                   background: "white",
                   border: "2px solid #fed7aa",
                   borderRadius: "12px",
-                  cursor: "pointer",
-                  transition: "transform 0.1s"
+                  cursor: "pointer"
                 }}
-                onMouseDown={(e) => e.target.style.transform = "scale(0.95")}
-                onMouseUp={(e) => e.target.style.transform = "scale(1)"}
               >
                 {item}
               </button>
