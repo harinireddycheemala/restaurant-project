@@ -1,3 +1,5 @@
+import FoodTrivia from "./FoodTrivia";
+import SpeedChef from "./SpeedChef";
 import React, { useState } from "react";
 import MemoryGame from "./MemoryGame";
 import RecipeAI from "./RecipeAI";
@@ -52,8 +54,8 @@ const GameArcade = () => {
           {/* Render Selected Game */}
           {currentGame === 'memory' && <MemoryGame />}
           {currentGame === 'recipe' && <RecipeAI />}
-          {currentGame === 'trivia' && <div>Food Trivia (Coming Soon)</div>}
-          {currentGame === 'speed' && <div>Speed Chef (Coming Soon)</div>}
+          {currentGame === 'trivia' &&  <FoodTrivia />}
+          {currentGame === 'speed' &&  <FoodTrivia />}
         </div>
       )}
     </div>
